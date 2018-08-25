@@ -1,0 +1,227 @@
+[
+    {
+        "degreeType": "Bachelor",
+        "name": "Business of IT - Applications C179",
+        "status": "Present" 
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Data Management - Applications C170",
+        "status": "Future" 
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "IT Capstone Written Project C769",
+        "status": "Future" 
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Network and Security - Foundations - C172",
+        "status": "Past" 
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Business of IT - Project Management - C176",
+        "status": "Past" 
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Software Engineering – C188",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Client-Server Application Development – C193",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Data Management for Programmers – C192",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Mobile Application Development – C196",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Software II - Advanced Java Concepts – C195",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Principles of Management – C483",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Scripting and Programming - Applications – C169",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Introduction to IT – C182",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Critical Thinking and Logic – C168",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Orientation – ORA1",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "IT Foundations – C393",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "IT Applications – C394",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Organizational Behavior and Leadership – C484",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Operating Systems for Programmers – C191",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "User Interface Design – C773",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Web Development Applications – C777",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Software I – C482",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Technical Communication – C768",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Scripting and Programming - Foundations – C173",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "English Composition II – C456",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "English Composition I – C455",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Web Development Foundations – C779",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Introduction to Probability and Statistics – C459",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "College Algebra – C278",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Data Management - Foundations – C175",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Integrated Physical Sciences – C165",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Natural Science Lab – C683",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Introduction to Humanities – C100",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Introduction to Communication – C464",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Bachelor",
+        "name": "Introduction to Geography – C255",
+        "status": "Past"
+    },
+    {
+        "degreeType": "Master",
+        "name": "Fundamentals of Data Analytics - C740",
+        "status": "Future"
+    },
+    {
+        "degreeType": "Master",
+        "name": "Statistics and Data Analysis - C741",
+        "status": "Future"
+    },
+    {
+        "degreeType": "Master",
+        "name": "Data Science Tools and Techniques - C742",
+        "status": "Future"
+    },
+    {
+        "degreeType": "Master",
+        "name": "Data Mining and Analytics - C743",
+        "status": "Future"
+    },
+    {
+        "degreeType": "Master",
+        "name": "Advanced SQL - C746",
+        "status": "Future"
+    },
+    {
+        "degreeType": "Master",
+        "name": "SAS Programming I: Fundamentals - C747",
+        "status": "Future"
+    },
+    {
+        "degreeType": "Master",
+        "name": "Advanced Data Visualization - C745",
+        "status": "Future"
+    },
+    {
+        "degreeType": "Master",
+        "name": "SAS Programming II: Business Analysis Applications - C748",
+        "status": "Future"
+    },
+    {
+        "degreeType": "Master",
+        "name": "Data Mining and Analytics II - C744",
+        "status": "Future"
+    },
+    {
+        "degreeType": "Master",
+        "name": "Data Analytics Graduate Capstone - C772",
+        "status": "Future"
+    }
+]
