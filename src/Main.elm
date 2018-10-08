@@ -2,6 +2,8 @@ module Main exposing (..)
 
 import Http
 import Html exposing ( Html, text, div, h1, img, ul, li )
+import Bootstrap.ListGroup as ListGroup
+import Bootstrap.Grid as Grid
 import Json.Decode as Decode exposing ( field )
 
 type alias Course = { name: String,  status: String, degreeType: String }
@@ -52,10 +54,14 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    div []
-        [ renderTestCourseList model.courses ]
-
-
+    Grid.container []
+        [ Grid.row []
+            [ Grid.col []
+                [ renderCoursesByType model.courses "Bachelor" ]
+            , Grid.col []
+                [ renderCoursesByType model.courses "Master" ]
+            ]
+        ]
 
 ---- PROGRAM ----
 
@@ -68,10 +74,39 @@ main =
         , subscriptions = always Sub.none
         }
 
--- For testing purposes
-renderTestCourseList: List Course -> Html msg
-renderTestCourseList courses = 
-    ul [] (List.map (\c -> li [] [ text c.name ]) courses)
+-- HTML Rendering Helpers --
+
+renderCoursesByType: List Course -> String -> Html msg
+renderCoursesByType courses courseType =
+    filterCoursesByDegreeType courses courseType
+        |> renderCourseListItems
+        |> ListGroup.ul
+
+renderCourseListItems: List Course -> List (ListGroup.Item msg)
+renderCourseListItems courses =
+    List.map assignCourseListItemClassesByStatus courses
+
+assignCourseListItemClassesByStatus: Course -> (ListGroup.Item msg)
+assignCourseListItemClassesByStatus course =
+    if course.status == "Past" then
+        ListGroup.li [ ListGroup.success ] [ text course.name ]
+    else if course.status == "Present" then
+        ListGroup.li [ ListGroup.active ] [ text course.name ]
+    else
+        ListGroup.li [ ListGroup.disabled ] [ text course.name ]
+
+renderBachelorCourses: List Course -> Html msg
+renderBachelorCourses bachCourses =
+    List.filter ( \c -> c.degreeType == "Bachelor") bachCourses
+        |> List.map ( \c -> ListGroup.li [] [ text c.name ] )
+        |> ListGroup.ul
+
+
+-- Utility Helpers --
+
+filterCoursesByDegreeType: List Course -> String -> List Course
+filterCoursesByDegreeType courses courseType =
+    List.filter (\c -> c.degreeType == courseType ) courses
 
 getFinishedCourses: List Course -> List Course
 getFinishedCourses courses =

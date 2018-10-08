@@ -2,17 +2,17 @@
     {
         "degreeType": "Bachelor",
         "name": "Business of IT - Applications C179",
-        "status": "Present" 
+        "status": "Past" 
     },
     {
         "degreeType": "Bachelor",
         "name": "Data Management - Applications C170",
-        "status": "Future" 
+        "status": "Past" 
     },
     {
         "degreeType": "Bachelor",
         "name": "IT Capstone Written Project C769",
-        "status": "Future" 
+        "status": "Past" 
     },
     {
         "degreeType": "Bachelor",
@@ -177,7 +177,7 @@
     {
         "degreeType": "Master",
         "name": "Fundamentals of Data Analytics - C740",
-        "status": "Future"
+        "status": "Present"
     },
     {
         "degreeType": "Master",
