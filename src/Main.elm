@@ -1,9 +1,10 @@
 module Main exposing (..)
 
 import Http
-import Html exposing ( Html, text, div, h1, img, ul, li )
+import Html exposing ( Html, text, div, h1, img, ul, li, hr )
 import Bootstrap.ListGroup as ListGroup
 import Bootstrap.Grid as Grid
+import Bootstrap.Progress as Progress
 import Json.Decode as Decode exposing ( field )
 
 type alias Course = { name: String,  status: String, degreeType: String }
@@ -51,11 +52,28 @@ update msg model =
 
 ---- VIEW ----
 
-
 view : Model -> Html Msg
 view model =
     Grid.container []
         [ Grid.row []
+            [ Grid.col []
+                [ h1 [] [ text ( "Total - " ++ ( toString ( calcCourseCompletionPercentage model.courses ) ) ++ "%" ) ] 
+                , Progress.progress [ Progress.value ( calcCourseCompletionPercentage model.courses ) ] 
+                ]
+            ]
+        , hr [] []
+        , Grid.row []
+            [ Grid.col []
+                [ h1 [] [ text ( "Bachelors - " ++ ( toString ( calcBachelorPercentComplete model.courses ) ) ++ "%" ) ]
+                , Progress.progress [ Progress.value ( calcBachelorPercentComplete model.courses ), Progress.success ] 
+                ]
+            , Grid.col []
+                [ h1 [] [ text ( "Masters - " ++ ( toString ( calcMastersPercentComplete model.courses ) ) ++ "%" ) ] 
+                , Progress.progress [ Progress.value ( calcMastersPercentComplete model.courses ) ] 
+                ]
+            ]
+        , hr [] []
+        , Grid.row []
             [ Grid.col []
                 [ renderCoursesByType model.courses "Bachelor" ]
             , Grid.col []
@@ -104,6 +122,34 @@ renderBachelorCourses bachCourses =
 
 -- Utility Helpers --
 
+calcCourseCompletionPercentage: List Course -> Float
+calcCourseCompletionPercentage courses =
+    ( toFloat ( List.length ( getFinishedCourses courses ) ) ) / toFloat ( List.length courses ) * 100
+
+calcBachelorPercentComplete: List Course -> Float
+calcBachelorPercentComplete courses =
+    let
+        bachelorCourseCount = 
+            List.length ( filterCoursesByDegreeType courses "Bachelor" )
+
+        finishedBachelorCourseCount =
+            List.length ( getFinishedBachelorCourses courses )
+    in
+    ( ( toFloat finishedBachelorCourseCount ) / ( toFloat bachelorCourseCount ) ) * 100
+
+calcMastersPercentComplete: List Course -> Float
+calcMastersPercentComplete courses =
+    let
+        mastersCourseCount = 
+            List.length ( filterCoursesByDegreeType courses "Master" )
+
+        finishedMastersCourseCount =
+            List.length ( getFinishedMastersCourses courses )
+    in
+    ( ( toFloat finishedMastersCourseCount ) / ( toFloat mastersCourseCount ) ) * 100
+
+
+
 filterCoursesByDegreeType: List Course -> String -> List Course
 filterCoursesByDegreeType courses courseType =
     List.filter (\c -> c.degreeType == courseType ) courses
@@ -128,15 +174,13 @@ getFutureBachelorCourses: List Course -> List Course
 getFutureBachelorCourses courses =
     List.filter (\c -> c.status == "Future" && c.degreeType == "Bachelor" ) courses
 
-getFinishedMasterCourses: List Course -> List Course
-getFinishedMasterCourses courses =
+getFinishedMastersCourses: List Course -> List Course
+getFinishedMastersCourses courses =
     List.filter (\c -> c.status == "Past" && c.degreeType == "Master" ) courses
 
 getFutureMasterCourses: List Course -> List Course
 getFutureMasterCourses courses =
     List.filter (\c -> c.status == "Future" && c.degreeType == "Master" ) courses
-
-
 
 -- Decodes a Course
 courseDecoder: Decode.Decoder Course
